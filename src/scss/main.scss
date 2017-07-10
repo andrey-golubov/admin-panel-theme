@@ -1,0 +1,64 @@
+@import "~normalize-scss/sass/_normalize.scss";
+
+/* flexboxgrid options */
+$flexboxgrid-grid-columns: 12;
+$flexboxgrid-gutter-width: 1rem;
+$flexboxgrid-outer-margin: 1rem;
+$flexboxgrid-breakpoints:
+  xs 1rem,
+  sm 48rem,
+  md 64rem,
+  lg 80rem,
+  xlg 90rem;
+
+@import "~flexboxgrid-sass/flexboxgrid.scss";
+
+.root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.header,
+.content {
+  @extend .row;
+}
+
+.header {
+  background-color: #F1D2B1;
+}
+
+.content {
+  flex: 1;
+  background-color: #D7EBEB;
+  &_wrapper {
+    @extend .col-sm;
+    @extend .col-md;
+    @extend .col-lg;
+    background-color: #FFFFFF;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  background-color: #D4B6E8;
+}
+
+.logo {
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+  @extend .col-lg-2;
+}
+
+.navbar {
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-2;
+  @extend .col-lg-2;
+  background-color: #B4F4DC;
+}
