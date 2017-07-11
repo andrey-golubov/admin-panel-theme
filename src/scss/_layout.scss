@@ -1,0 +1,90 @@
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header,
+.content {
+  @extend .row;
+}
+
+.header {
+  background-color: #304D68;
+  color: #FFFFFF;
+  &_navbar {
+    background-color: none;
+  }
+}
+
+.content {
+  background-color: #EFF0F5;
+  flex: 1 0 auto;
+  &_wrapper {
+    @extend .col-xs;
+    @extend .col-sm;
+    @extend .col-md;
+    @extend .col-lg;
+    padding: 0;
+  }
+  &_section {
+    @extend .container-fluid;
+  }
+  &_navbar {
+    @extend .#{$navbar-position}-md;
+    @extend .#{$navbar-position}-lg;
+  }
+  &_aside {
+    @extend .#{$aside-position}-md;
+    @extend .#{$aside-position}-lg;
+  }
+}
+
+.section {
+  &_container {
+    background-color: #FEFEFE;
+    padding: 1rem;
+    margin: 16px auto;
+    box-shadow: 0 0 7px #B3B3B3;
+  }
+}
+
+.footer {
+  @extend .row;
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+  background-color: #EFF0F5;
+  &_inner {
+    @extend .col-xs;
+    @extend .col-sm;
+    @extend .col-md;
+    @extend .col-lg;
+    &--layout {
+      @extend .container-fluid;
+    }
+  }
+}
+
+.navbar,
+.logo {
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+  @extend .col-lg-2;
+}
+
+.navbar {
+  &_menu {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 7px #B3B3B3;
+    list-style: none;
+    padding: 10px;
+  }
+  &_item {
+    @extend .row;
+    padding: 10px;
+  }
+}
