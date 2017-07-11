@@ -29,7 +29,7 @@ const config = {
         test: /\.scss$/,
         use: extractSass.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader!sass-loader',
+          loader: 'css-loader?sourceMap=true!sass-loader',
         }),
       }
     ]

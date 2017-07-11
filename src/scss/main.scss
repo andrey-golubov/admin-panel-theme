@@ -14,11 +14,11 @@ $flexboxgrid-breakpoints:
 @import "~flexboxgrid-sass/flexboxgrid.scss";
 
 .root {
-  display: flex;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  margin: 0;
-  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .header,
@@ -27,27 +27,51 @@ $flexboxgrid-breakpoints:
 }
 
 .header {
-  background-color: #F1D2B1;
+  background-color: #293F54;
+  color: #FFFFFF;
 }
 
 .content {
-  flex: 1;
-  background-color: #D7EBEB;
+  background-color: #EFF0F5;
+  flex: 1 0 auto;
   &_wrapper {
-    @extend .col-sm;
-    @extend .col-md;
-    @extend .col-lg;
-    background-color: #FFFFFF;
+    @extend .col-xs-12;
+    @extend .col-sm-12;
+    @extend .col-md-9;
+    @extend .col-lg-10;
+    padding: 0;
+  }
+  &_section {
+    @extend .container-fluid;
+  }
+}
+
+.section {
+  &_container {
+    background-color: #FEFEFE;
+    padding: 1rem;
+    margin: 16px auto;
+    box-shadow: 0 0 7px #B3B3B3;
   }
 }
 
 .footer {
-  text-align: center;
-  padding: 15px 0;
+  @extend .row;
+  flex: 0 0 auto;
   font-size: 0.9rem;
-  background-color: #D4B6E8;
+  background-color: #EFF0F5;
+  &_inner {
+    @extend .col-xs;
+    @extend .col-sm;
+    @extend .col-md;
+    @extend .col-lg;
+    &--layout {
+      @extend .container-fluid;
+    }
+  }
 }
 
+.navbar,
 .logo {
   @extend .col-xs-12;
   @extend .col-sm-12;
@@ -56,9 +80,14 @@ $flexboxgrid-breakpoints:
 }
 
 .navbar {
-  @extend .col-xs-12;
-  @extend .col-sm-12;
-  @extend .col-md-2;
-  @extend .col-lg-2;
-  background-color: #B4F4DC;
+  &_menu {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 7px #B3B3B3;
+    list-style: none;
+    padding: 10px;
+  }
+  &_item {
+    @extend .row;
+    padding: 10px;
+  }
 }
