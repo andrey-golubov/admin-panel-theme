@@ -1,0 +1,32 @@
+a {
+  &:link {
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link {
+  color: #255FCD;
+  &--navbar {
+    color: inherit;
+    display: block;
+    padding: 14px 0 14px 40px;
+    &:hover {
+      background-color: $likeBlue;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+  &--navbar-list {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.list-text {
+  margin: 0 14px;
+}

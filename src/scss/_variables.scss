@@ -1,3 +1,18 @@
 /* for layout */
+$header-navbar-positiom: end !default;
+
 $navbar-position: first !default;
 $aside-position: last !default;
+
+/* colors */
+$white: #FFFFFF;
+$likeBlue: #304D68;
+$backgroundColor: #EFF0F5;
+$shadowColor: #B3B3B3;
+
+/* base class */
+.col {
+  @each $key, $breakpoint in $breakpoints {
+    @extend .col-#{$key};
+  }
+}

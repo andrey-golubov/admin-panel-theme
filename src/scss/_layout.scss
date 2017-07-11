@@ -1,33 +1,37 @@
-
 .root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.header,
-.content {
-  @extend .row;
+  font-family: sans-serif;
+  text-shadow: 0px 1px #AAA9A9;
 }
 
 .header {
-  background-color: #304D68;
-  color: #FFFFFF;
+  @extend .row;
+  background-color: $likeBlue;
+  color: $white;
   &_navbar {
     background-color: none;
+    @extend .col;
   }
 }
 
+.logo {
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+  @extend .col-lg-2;
+  text-align: center;
+}
+
 .content {
-  background-color: #EFF0F5;
+  @extend .row;
+  background-color: $white;
   flex: 1 0 auto;
   &_wrapper {
-    @extend .col-xs;
-    @extend .col-sm;
-    @extend .col-md;
-    @extend .col-lg;
+    @extend .col;
     padding: 0;
   }
   &_section {
@@ -45,46 +49,65 @@
 
 .section {
   &_container {
-    background-color: #FEFEFE;
+    background-color: $white;
     padding: 1rem;
     margin: 16px auto;
-    box-shadow: 0 0 7px #B3B3B3;
+    box-shadow: 0 0 7px $shadowColor;
   }
+  &_title {
+    border-bottom: 1px solid $likeBlue;
+  }
+}
+
+.navbar {
+  @extend .col-xs-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+  @extend .col-lg-2;
+  &_menu {
+    background-color: $white;
+    box-shadow: 0 0 7px $shadowColor;
+    list-style: none;
+    padding: 0;
+    &--line {
+      @extend .row;
+      @extend .#{$header-navbar-positiom}-md;
+      @extend .#{$header-navbar-positiom}-lg;
+      padding: 10px;
+      list-style: none;
+    }
+    &--sub {
+      display: none;
+      list-style: none;
+      position: absolute;
+      right: -40px;
+      top: 0px;
+    }
+  }
+  &_item {
+    position: relative;
+    font-size: 18px;
+    color: $likeBlue;
+    &--line {
+      font-size: 20px;
+      padding: 0 23px;
+    }
+    &:not(:last-child) {
+      /* border-bottom: 1px solid; */
+    }
+  }
+}
+
+.navbar_item:hover + .navbar_menu--sub {
+  display: block;
 }
 
 .footer {
   @extend .row;
   flex: 0 0 auto;
   font-size: 0.9rem;
-  background-color: #EFF0F5;
+  background-color: $white;
   &_inner {
-    @extend .col-xs;
-    @extend .col-sm;
-    @extend .col-md;
-    @extend .col-lg;
-    &--layout {
-      @extend .container-fluid;
-    }
-  }
-}
-
-.navbar,
-.logo {
-  @extend .col-xs-12;
-  @extend .col-sm-12;
-  @extend .col-md-3;
-  @extend .col-lg-2;
-}
-
-.navbar {
-  &_menu {
-    background-color: #FFFFFF;
-    box-shadow: 0 0 7px #B3B3B3;
-    list-style: none;
-    padding: 10px;
-  }
-  &_item {
-    @extend .row;
-    padding: 10px;
+    @extend .container-fluid;
   }
 }

@@ -1,20 +1,27 @@
+/* libs */
 @import "~normalize-scss/sass/_normalize.scss";
 
 /* flexboxgrid options */
-$flexboxgrid-grid-columns: 12;
-$flexboxgrid-gutter-width: 1rem;
-$flexboxgrid-outer-margin: 1rem;
-$flexboxgrid-breakpoints:
+/* $grid-columns: 12; */
+/* $gutter-width: 1rem; */
+/* $outer-margin: 1rem; */
+/* $breakpoints:
   xs 1rem,
   sm 48rem,
   md 64rem,
   lg 80rem,
-  xlg 90rem;
+  xlg 90rem; */
+
+/* $flexboxgrid-max-width: 1200px; */
 
 @import "~flexboxgrid-sass/flexboxgrid.scss";
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 /* variables */
 @import "_variables.scss";
 
 /* custom */
 @import "_layout.scss";
+@import "_tags.scss";
