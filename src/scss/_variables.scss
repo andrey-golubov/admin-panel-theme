@@ -9,14 +9,3 @@ $white: #FFFFFF;
 $likeBlue: #304D68;
 $backgroundColor: #EFF0F5;
 $shadowColor: #B3B3B3;
-
-/* base class */
-@each $key, $breakpoint in $breakpoints {
-  .col {
-    @extend .col-#{$key};
-  }
-  .col-max {
-    @extend .col-#{$key}-#{$grid-columns};
-  }
-}
-

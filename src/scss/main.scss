@@ -1,3 +1,7 @@
+/* theme mix and functions */
+@import "_mixins.scss";
+@import "_functions.scss";
+
 /* libs */
 @import "~normalize-scss/sass/_normalize.scss";
 
@@ -14,6 +18,7 @@ $breakpoints:
 /* $flexboxgrid-max-width: 1200px; */
 
 @import "~flexboxgrid-sass/flexboxgrid.scss";
+@import "_flexboxgrid-sass_patch.scss";
 
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
@@ -22,6 +27,5 @@ $fa-font-path: "~font-awesome/fonts";
 @import "_variables.scss";
 
 /* custom */
-@import "_mixins.scss";
 @import "_tags.scss";
 @import "_layout.scss";
