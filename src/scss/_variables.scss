@@ -11,8 +11,12 @@ $backgroundColor: #EFF0F5;
 $shadowColor: #B3B3B3;
 
 /* base class */
-.col {
-  @each $key, $breakpoint in $breakpoints {
+@each $key, $breakpoint in $breakpoints {
+  .col {
     @extend .col-#{$key};
   }
+  .col-max {
+    @extend .col-#{$key}-#{$grid-columns};
+  }
 }
+

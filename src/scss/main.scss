@@ -23,5 +23,6 @@ $fa-font-path: "~font-awesome/fonts";
 @import "_variables.scss";
 
 /* custom */
-@import "_layout.scss";
+@import "_mixins.scss";
 @import "_tags.scss";
+@import "_layout.scss";

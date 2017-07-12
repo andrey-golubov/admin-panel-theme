@@ -1,0 +1,7 @@
+@mixin hoverColor($textColor, $bgColor) {
+  color: $textColor;
+  &:hover {
+    color: $white;
+    background-color: $bgColor;
+  }
+}

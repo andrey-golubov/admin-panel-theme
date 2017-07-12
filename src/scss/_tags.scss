@@ -13,6 +13,7 @@ a {
     color: inherit;
     display: block;
     padding: 14px 0 14px 40px;
+    
     &:hover {
       background-color: $likeBlue;
       text-decoration: none;
@@ -29,4 +30,77 @@ a {
 
 .list-text {
   margin: 0 14px;
+}
+
+.form {
+  &_title {
+    @extend .col-max;
+  }
+  &_wrapper {
+  }
+  &_group {
+  }
+  &_input {
+    padding: 10px 8px;
+    @extend .row;
+  }
+}
+
+.input {
+  &_label {
+    @extend .col-max;
+    padding-bottom: 10px;
+  }
+  &_text {
+    @extend .col-max;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #6B849B;
+    height: 27px;
+    padding: 3px 10px;
+    &:focus {
+      box-shadow: 0px 0px 3px #2aae76;
+    }
+  }
+  &_select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    &::-ms-expand {
+      display: none;
+    }
+    @extend .col-max;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #6B849B;
+    height: 27px;
+    padding: 3px 10px;
+    background: none;
+    &:focus {
+      box-shadow: 0px 0px 3px #2aae76;
+    }
+  }
+}
+
+@mixin buttonHoverColor($text, $background) {
+  @include hoverColor($text, $background)
+  border: 2px solid $background;
+}
+
+.button {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 15px;
+  background: none;
+  @include buttonHoverColor($likeBlue, $likeBlue);
+  &--okay {
+    @include buttonHoverColor(#227104, #227104);
+  }
+  &--warn {
+    @include buttonHoverColor(#5E6819, #CAE315);
+  }
+  &--cansel {
+    @include buttonHoverColor(#681919, #EE3F56);
+  }
 }
