@@ -46,6 +46,15 @@ a {
   }
 }
 
+@mixin inputTheme($borderColor, $focusShadowColor) {
+  border: none;
+  border-bottom: 1px solid $borderColor;
+  height: 30px;
+  &:focus {
+    box-shadow: 0px 0px 3px $focusShadowColor;
+  }
+}
+
 .input {
   &_label {
     @extend .col-max;
@@ -53,16 +62,10 @@ a {
   }
   &_text {
     @extend .col-max;
-    padding: 0;
-    border: none;
-    border-bottom: 1px solid #6B849B;
-    height: 27px;
-    padding: 15px 10px;
-    &:focus {
-      box-shadow: 0px 0px 3px #2aae76;
-    }
+    @include inputTheme(#6B849B, #2aae76);
   }
   &_select {
+    background: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
@@ -71,15 +74,7 @@ a {
       display: none;
     }
     @extend .col-max;
-    padding: 0;
-    border: none;
-    border-bottom: 1px solid #6B849B;
-    height: 27px;
-    padding: 3px 10px;
-    background: none;
-    &:focus {
-      box-shadow: 0px 0px 3px #2aae76;
-    }
+    @include inputTheme(#6B849B, #2aae76);
   }
 }
 
@@ -95,10 +90,10 @@ a {
   background: none;
   @include buttonHoverColor($likeBlue, $likeBlue);
   &--okay {
-    @include buttonHoverColor(#227104, #227104);
+    @include buttonHoverColor(#227104, #1C6700);
   }
   &--warn {
-    @include buttonHoverColor(#5E6819, #CAE315);
+    @include buttonHoverColor(#5E6819, #D4C30F);
   }
   &--cansel {
     @include buttonHoverColor(#681919, #EE3F56);
