@@ -1,0 +1,17 @@
+@function get-first($list) {
+  @return nth($list, 1);
+}
+
+@function get-last($list) {
+  @return nth($list, length($list));
+}
+
+@function get-byIndex($list, $idx) {
+  @each $value in $list {
+    $item: nth($list, $idx);
+    @if( $item ) {
+      @return $item;
+    }
+    @return false;
+  }
+}

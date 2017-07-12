@@ -1,0 +1,33 @@
+/* base classes */
+@each $key, $breakpointEm, $breakpointRem in $breakpoints {
+  $i: index($breakpoints, $key $breakpointEm $breakpointRem);
+  .col {
+    @extend .col-#{$key};
+  }
+  .col-max {
+    @extend .col-#{$key}-#{$grid-columns};
+  }
+  @if($i == 1) {
+    $nextBpEm: get-byIndex(nth($breakpoints, $i + 1), 2);
+    .hidden-#{$key} {
+      @media only screen and (max-width: $nextBpEm) {
+        display: none !important;
+      }
+    }
+  }@else if ($i == length($breakpoints)) {
+    .hidden-#{$key} {
+      @media only screen and (min-width: $breakpointEm) {
+        display: none !important;
+      }
+    }
+  }
+  @else {
+    $nextBpEm: get-byIndex(nth($breakpoints, $i + 1), 2);
+    .hidden-#{$key} {
+      @media only screen and (min-width: $breakpointEm) 
+        and (max-width: $nextBpEm) {
+          display: none !important;
+      }
+    }
+  }
+}
